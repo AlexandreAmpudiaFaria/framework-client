@@ -1,0 +1,54 @@
+<div class="static-slider-head" style="background-image: url(assets/images/landingpage/banner-bg.jpg)">
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 align-self-center text-center no-trans">
+        <h3 class="title">Framework Blog</h3>
+        <a href="https://www.wrappixel.com/free-wrapkit-angular-blog"
+          class="btn btn-md m-t-30 btn-success-gradiant font-14" target="blank">Novo Post</a>
+      </div>
+      <!-- Column -->
+    </div>
+  </div>
+</div>
+
+<!-- Row  -->
+<div class="container spacer">
+  <div class="row justify-content-center">
+    <!-- Column -->
+    <div class="col-md-8 no-trans text-center">
+      <h2 class="title">Postagens Recentes</h2>
+    </div>
+    <!-- Column -->
+  </div>
+  <div class="row m-t-40 justify-content-center">
+    <!-- Column -->
+    <div class="col-md-8 no-trans border-bottom mb-4" *ngFor="let item of posts$">
+
+      <div class="card" data-aos="flip-left" data-aos-duration="1200">
+        <div class="row">
+          <div class="col-md-2 no-trans">
+            <span class="text-dark font-medium">{{ item.user.username }}</span>
+            <h6 class="card-subtitle font-12 mt-1">Autor</h6>
+          </div>
+          <div class="col-md-7 no-trans">
+            <h5 class="font-medium cursor-pointer">
+              <!--(click)="viewDetail(bl.id)"-->
+              {{ item.name}}
+            </h5>
+            <p class="m-t-20">
+              {{ item.text .substring(0, 150) }}..
+            </p>
+          </div>
+          <div class="col-md-3 no-trans">
+            <a class="linking font-medium text-themecolor m-t-10 cursor-pointer">
+               <span (click)="viewDetail(item.id)">Leia mais</span>
+              <i class="ti-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
