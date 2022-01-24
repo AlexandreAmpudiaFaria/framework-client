@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Post } from 'src/app/apps/model/Post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListPostService {
 
-  post : Post[];
+  post : Post[] = [];
 
   api = 'http://localhost:8080/post';
 
